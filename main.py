@@ -25,7 +25,7 @@ async def dialogflow_webhook(request: Request):
     dni = parameters.get("identityDocument")
 
 
-    if intent == "IdentificarmeIntent":
+    if intent == "Identificarme Intent":
         if not dni:
             response_text = "No recibí tu DNI. ¿Podés repetírmelo?"
         else:
@@ -37,7 +37,7 @@ async def dialogflow_webhook(request: Request):
             else:
                 response_text = "No encontré a nadie con ese DNI."
     else:
-        response_text = "Intent no reconocido."
+        response_text = "Intent no reconocido.{intent}"
 
     return JSONResponse(
         content={
