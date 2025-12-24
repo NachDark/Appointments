@@ -13,6 +13,7 @@ FAKE_DB = {
     }
 }
 
+
 @app.post("/webhook")
 async def dialogflow_webhook(request: Request):
     body = await request.json()
